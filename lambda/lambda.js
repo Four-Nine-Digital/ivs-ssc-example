@@ -1,6 +1,8 @@
 import { IVSRealTimeClient, CreateEncoderConfigurationCommand, StartCompositionCommand, ListEncoderConfigurationsCommand } from "@aws-sdk/client-ivs-realtime"
 
 export const handler = async (event, context) => {
+  console.log(event)
+  //Update the ARN based on the Real-time stage you just created
   if (event.resources[0] !== "arn:aws:ivs:us-west-2:045801317995:stage/UDtqU9zlMc21") {
     return
   }
@@ -10,7 +12,7 @@ export const handler = async (event, context) => {
   }
   console.log({ event })
 
-
+  // Update the Region if you are deploying the lambda in a different region
   const client = new IVSRealTimeClient({
     region: 'us-west-2'
   })
