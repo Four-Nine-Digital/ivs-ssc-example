@@ -1,7 +1,7 @@
 # Table of Contents
 - [What is Server Side Composition?](#what-is-server-side-composition)
 - [Run the web application](#run-the-web-application)
-- [set up the Lambda function that broadcasts to a Low-latency channel](#set up-the-lambda-function-that-broadcasts-to-a-low-latency-channel)
+- [Set up the Lambda function that broadcasts to a Low-latency channel](#set-up-the-lambda-function-that-broadcasts-to-a-low-latency-channel)
 - [Test Server Side Composition](#test-server-side-composition)
 - [Debugging](#debugging)
 
@@ -61,9 +61,9 @@ On both tabs you opened you should see two videos with the labels **user-1** and
 
 We haven't integrated with Low-latency streaming yet so you can go ahead and click on **Leave Stage** in BOTH your tabs to end streaming.
 
-## set up the Lambda function that broadcasts to a Low-latency channel
+## Set up the Lambda function that broadcasts to a Low-latency channel
 
-### Step 1. set up the Lambda function
+### Step 1. Set up the Lambda function
 1. Search for the Lambda service in your AWS Console.
 2. Click on **Functions** in the left menu
 3. Click on **Create function**
@@ -105,7 +105,7 @@ We haven't integrated with Low-latency streaming yet so you can go ahead and cli
 22. Click **Create policy**
 
 
-### Step 1.1 set up Layers for the Lambda function
+### Step 1.1 Set up Layers for the Lambda function
 Go to your Lambda Editor and click **Test**
 1. Set the Event name to *test-1*
 2. Click **Save**
@@ -145,7 +145,7 @@ Once you create the layer, you will need to add it to your Lambda function.
 
 
 
-### Step 2. set up the EventBridge Rule
+### Step 2. Set up the EventBridge Rule
 1. Search for the Amazon EventBridge service in your AWS Console.
 2. Click on **Rules** in the left menu and click **Create rule*
 3. Give the rule a name like **Server-side-composition-test**
@@ -161,7 +161,7 @@ Once you create the layer, you will need to add it to your Lambda function.
 13. Click **Next**
 14. Under Target 1 select **AWS Service**
 15. Select **Lambda Function**
-16. Select the function you created in the [Step 1](#step-1-set up-the-lambda-function)
+16. Select the function you created in the [Step 1](#step-1-set-up-the-lambda-function)
 17. Click **Next**
 18. Click **Next** again
 19. Click **Create rule**
