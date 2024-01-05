@@ -147,7 +147,7 @@ Once you create the layer, you will need to add it to your Lambda function.
 
 ### Step 2. Set up the EventBridge Rule
 1. Search for the Amazon EventBridge service in your AWS Console.
-2. Click on **Rules** in the left menu and click **Create rule*
+2. Click on **Rules** in the left menu and click **Create rule**
 3. Give the rule a name like **Server-side-composition-test**
 4. Rule type **Rule with an event pattern**
 5. Click **Next**
