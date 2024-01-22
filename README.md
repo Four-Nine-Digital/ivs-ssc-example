@@ -115,6 +115,9 @@ In the event you try and run the code and it fails with this error:
 ```
 Named export 'CreateEncoderConfigurationCommand' not found. The requested module '@aws-sdk/client-ivs-realtime' is a CommonJS module, which may not support all module.exports as named exports.\nCommonJS modules can always be imported via the default export
 ```
+
+**Note**: You might see another error if your test data is not formatted like an "IVS Stage Update" event. Disregard this erro.
+
 You will need to create a layer with the SDK uploaded. 
 [This article](https://stackoverflow.com/questions/58703761/does-lambda-layer-include-aws-sdk) outlines the general steps
 
