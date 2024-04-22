@@ -3,7 +3,7 @@ import { IVSRealTimeClient, CreateEncoderConfigurationCommand, StartCompositionC
 export const handler = async (event, context) => {
   console.log(event)
   //Update the ARN based on the Real-time stage you just created
-  if (event.resources[0] !== "arn:aws:ivs:us-west-2:045801317995:stage/UDtqU9zlMc21") {
+  if (event.resources[0] !== "arn:aws:ivs:us-west-2:xxxxxxx:stage/xxxxxxx") {
     return
   }
 
@@ -57,7 +57,7 @@ export const handler = async (event, context) => {
       { // DestinationConfiguration
         name: "prashant-channel-destination",
         channel: { // ChannelDestinationConfiguration
-          channelArn: "arn:aws:ivs:us-west-2:045801317995:channel/MTypUBKZOBga", // required
+          channelArn: "arn:aws:ivs:us-west-2:xxxxxxxx:channel/xxxxxxxxxx", // required
           encoderConfigurationArn,
         },
       },

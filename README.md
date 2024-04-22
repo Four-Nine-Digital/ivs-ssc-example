@@ -29,14 +29,11 @@ Log into the Amazon AWS console and search for Amazon IVS.
 **Note**: You will need to create **2** participant tokens. Make sure you **DO NOT** refresh the stage details page after the tokens are created or you will need to recreate the tokens (they are one-time use).
 1. Visit the Stage Details page.
 2. Click on **Create a participant token**
-3. Enter a user ID
+3. Enter a user ID: **user-1**
 4. Select **Publish** and **Subscribe** as capabilities. You can leave token duration empty the default value is ok.
-5. Click on **Add new attribute**
-6. Enter **userId** as the key
-7. Enter **user-1** as the value
-8. Click **Create a participant token**
+5. Click **Create a participant token**
 
-Repeat steps 3.1 - 3.6, change the value in step 6 to be **user-2**
+Repeat steps 3.1 - 3.5, change the value in step 3 to be **user-2**
 **Note**: Copy the tokens into a text editor. If you navigate away from the page, you will lose the tokens.
 
 ### Step 4. Run the code
@@ -107,16 +104,28 @@ We haven't integrated with Low-latency streaming yet so you can go ahead and cli
 
 ### Step 1.1 Set up Layers for the Lambda function
 Go to your Lambda Editor and click **Test**
-1. Set the Event name to *test-1*
+1. Set the Event name to **test-1**
 2. Click **Save**
 3. Click **Test** on the main screen again.
 
+#### Expected result:
+The code will fail with this error because your test data is not formatted like an "IVS Stage Update" event. Disregard this error.
+```
+{
+  "errorType": "TypeError",
+  "errorMessage": "Cannot read properties of undefined (reading '0')",
+  "trace": [
+    "TypeError: Cannot read properties of undefined (reading '0')",
+    "    at Runtime.handler (file:///var/task/index.mjs:6:22)",
+    "    at Runtime.handleOnceNonStreaming (file:///var/runtime/index.mjs:1173:29)"
+  ]
+}
+```
+#### Unexpected result:
 In the event you try and run the code and it fails with this error:
 ```
 Named export 'CreateEncoderConfigurationCommand' not found. The requested module '@aws-sdk/client-ivs-realtime' is a CommonJS module, which may not support all module.exports as named exports.\nCommonJS modules can always be imported via the default export
 ```
-
-**Note**: You might see another error if your test data is not formatted like an "IVS Stage Update" event. Disregard this erro.
 
 You will need to create a layer with the SDK uploaded. 
 [This article](https://stackoverflow.com/questions/58703761/does-lambda-layer-include-aws-sdk) outlines the general steps
